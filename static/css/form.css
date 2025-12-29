@@ -1,0 +1,77 @@
+/* Contenidor general del formulari */
+.contenidor-form {
+    max-width: 450px;
+    margin: 40px auto;
+    padding: 30px;
+
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Títol */
+.contenidor-form h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #333;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+/* Labels */
+.contenidor-form label {
+    display: block;
+    margin: 12px 0 5px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #444;
+}
+
+/* Inputs */
+.contenidor-form input {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+
+    font-size: 15px;
+    transition: all 0.2s ease;
+}
+
+/* Efecte focus bonic */
+.contenidor-form input:focus {
+    outline: none;
+    border-color: #3a86ff;
+    box-shadow: 0 0 5px rgba(58, 134, 255, 0.4);
+}
+
+/* Botó */
+.boto-accio {
+    width: 100%;
+    padding: 12px;
+
+    margin-top: 20px;
+
+    background-color: #3a86ff;
+    color: white;
+    font-weight: 600;
+    font-size: 16px;
+
+    border: none;
+    border-radius: 8px;
+
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.boto-accio:hover {
+    background-color: #155bc1;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .contenidor-form {
+        margin: 20px;
+        padding: 20px;
+    }
+}

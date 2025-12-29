@@ -6,5 +6,15 @@
             <!-- <div><?php //echo $prod['descripcio'] ?></div> -->
         </div>
         </a>
+        <div class="preu">
+                <?php echo number_format($prod['preu'], 2, ',', '.') ?> €
+        </div>
+
+        <form action="#" method="POST">
+            <input type="hidden" name="id_producte" value="<?php echo $prod['id'] ?>">
+            <button type="submit" class="btn-carret">
+                🛒 Afegir al carret
+            </button>
+        </form>
     </div>
 <?php } ?>

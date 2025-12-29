@@ -28,15 +28,23 @@ header {
     padding: 0 40px;
     align-items: center;
     box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+
+    
 }
 
 .static, .interactive{
     display: flex;
     align-items: center;
+    align-content: center;
     gap: 25px;
 }
 
-.cart a, .login {
+.static {
+    gap: 10px;
+    font-family: "Fredoka", sans-serif;
+}
+
+.cart a, .login a{
     display: flex;
     align-items: center;
     gap: 8px;   /* espai entre icona i text */
@@ -52,9 +60,9 @@ header {
 }
 
 .cart a:hover, .login:hover {
-    background-color: #f3f4f6;    
+    background-color: #f3f4f6;
+    cursor: pointer;
 }
-
 
 .caixa_container {
     padding: 40px;
@@ -74,6 +82,7 @@ header {
     border-radius: 16px;
     box-shadow: 0 4px 6px -1 rgba(0,0,0,0.05);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
 }
 
 .caixa img {
@@ -97,18 +106,55 @@ header {
 }
 
 .detall {
-    display: flex;
-    justify-content: center;    
-    align-items: center;
-    min-height: 80vh;
-    padding: 20px;
+
 }
+
+.caixa_detall {
+    background-color: white;
+    width: 100%;
+    max-width: 1000px;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1);
+    display: flex;
+}
+
+.caixa_detall img {
+    width: 100%;
+    object-fit: contain;
+    background-color: #fff;
+    padding: 40px;
+    mix-blend-mode: multiply; 
+}
+
+
+
+.login {
+    position: relative;
+    display: inline-block;
+}
+
+.desplegable-usuari {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: white;
+    border: 1px solid #ccc;
+    list-style: none;
+    padding: 10px;
+    width: 150px;
+    z-index: 1000;
+}
+
+.desplegable-usuari li {
+    padding: 5px 0;
+}
+
+
 
 @media screen and (max-width: 750px) {
     .interactive span{
         display: none;
     }
-    
 }
 
 

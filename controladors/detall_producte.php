@@ -10,6 +10,7 @@ include_once __DIR__."/../models/productes.php";
 $conn = connectaBD();
 $producte = getProdById($conn, $prod);
 
+pg_close($conn);
 include __DIR__."/../vistes/vista_detall_producte.php";
 
 ?>

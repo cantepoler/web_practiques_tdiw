@@ -14,6 +14,10 @@ switch ($accio) {
     case 'detall-producte' :
         include __DIR__."/recurs_detall_producte.php";
         break;
+    case 'registre':
+        include __DIR__."/recurs_registre.php";
+        break;
+
     default:    
         include __DIR__."/recurs_llistat_categories.php";
         break;
