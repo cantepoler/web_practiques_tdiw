@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 define("BASE_URL", "https://tdiw-g5.deic-docencia.uab.cat");
 
 // El recurs al que accedirem ens ho dirà la variable accio.
@@ -16,6 +18,12 @@ switch ($accio) {
         break;
     case 'registre':
         include __DIR__."/recurs_registre.php";
+        break;
+    case 'login':
+        include __DIR__."/recurs_login.php";
+        break;
+    case 'logout':
+        include __DIR__."/recurs_logout.php";
         break;
 
     default:    

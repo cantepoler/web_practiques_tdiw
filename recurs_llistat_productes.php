@@ -1,1 +1,1 @@
-<?php include __DIR__.'/controladors/llistar_productes.php'; ?>        
+<?php include __DIR__.'/controladors/llistar_productes.php'; ?>  

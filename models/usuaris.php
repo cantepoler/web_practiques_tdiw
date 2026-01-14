@@ -8,4 +8,13 @@ function registrarUsuari($conn, $nom, $email, $password, $adreca, $poblacio, $cp
 
     return $result;
 }
+
+function getUser($conn, $email) {
+    $sql = "SELECT * FROM usuaris WHERE email = $1";
+    $params = [$email];
+    $result = pg_query_params($conn, $sql, $params);
+    $result = pg_fetch_all($result);
+    
+    return $result;
+}
 ?>
