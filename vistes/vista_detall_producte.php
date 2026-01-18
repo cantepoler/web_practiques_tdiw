@@ -10,7 +10,7 @@
 
             <form action="index.php?accio=afegir-al-carret" method="POST">
                 <input type="hidden" name="id_producte" value="<?php echo $producte['id'] ?>">
-                <button type="submit" class="btn-carret">
+                <button type="submit" class="btn-carret" onclick="afegirAlCarret(event, this.form)">
                     🛒 Afegir al carret
                 </button>
             </form>
