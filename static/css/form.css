@@ -45,6 +45,30 @@
     box-shadow: 0 0 5px rgba(58, 134, 255, 0.4);
 }
 
+/* Error state */
+.contenidor-form input.error {
+    border-color: #ef4444;
+    background-color: #fef2f2;
+}
+
+.contenidor-form input.error:focus {
+    border-color: #ef4444;
+    box-shadow: 0 0 5px rgba(239, 68, 68, 0.4);
+}
+
+/* Error messages */
+.error-message {
+    display: none;
+    color: #ef4444;
+    font-size: 13px;
+    margin-top: 4px;
+    margin-bottom: 8px;
+}
+
+.error-message.visible {
+    display: block;
+}
+
 /* Botó */
 .boto-accio {
     width: 100%;
