@@ -1,3 +1,6 @@
+<?php
+@session_start();
+?>
 <header>
     <div>
         <a href="/" class="static">
@@ -15,9 +18,9 @@
             </a>
         </div>
         <div class="login" id="obrir_menu">
-            <a href="#">
+            <a href="index.php?accio=el-meu-compte">
                 <img src="/img/person.svg" alt="Icona d'usuari" width="20px">
-                <span>Login</span>
+                <span><?php echo isset($_SESSION['user_id']) ? 'El meu compte' : 'Login'; ?></span>
             </a>
             <ul id="desplegable-usuari" class="desplegable-usuari">
                 <?php if (isset($_SESSION['user_id'])): ?>
