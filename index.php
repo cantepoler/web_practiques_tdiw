@@ -25,12 +25,27 @@ switch ($accio) {
     case 'logout':
         include __DIR__."/recurs_logout.php";
         break;
+    case 'carret':
+        include __DIR__."/recurs_carret.php";
+        break;
+    case 'afegir-al-carret':
+        include __DIR__."/recurs_afegir_al_carret.php";
+        break;
+    case 'actualitzar-carret':
+        include __DIR__."/recurs_actualitzar_carret.php";
+        break;
+    case 'carret-count':
+        include __DIR__."/recurs_carret_count.php";
+        break;
+    case 'eliminar-del-carret':
+        include __DIR__."/recurs_eliminar_del_carret.php";
+        break;
 
-    default:    
+    default:
         include __DIR__."/recurs_llistat_categories.php";
         break;
 
-    // Per a cada recurs diferent, hi haura un case. 
+    // Per a cada recurs diferent, hi haura un case.
     // Hi haurà recursos pel menu d'usuari, per inciar sessió, etc.
 }
 ?>

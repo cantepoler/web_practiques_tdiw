@@ -8,11 +8,11 @@
 
     <div class="interactive">
         <div class="cart">
-            <a href="#"> <!-- TODO -->
+            <a href="index.php?accio=carret">
                 <img src="/img/carro.png" alt="Carro de la compra" width="20px">
                 <span>Carret</span>
-            </a> 
-                
+                <span id="cart-count">(<?php echo isset($_SESSION['carret']) ? array_sum($_SESSION['carret']) : 0; ?>)</span>
+            </a>
         </div>
         <div class="login" id="obrir_menu">
             <a href="#">
