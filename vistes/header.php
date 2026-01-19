@@ -18,10 +18,10 @@
             </a>
         </div>
         <div class="login" id="obrir_menu">
-            <a href="index.php?accio=el-meu-compte">
+            <div class="login-header">
                 <img src="/img/person.svg" alt="Icona d'usuari" width="20px">
                 <span><?php echo isset($_SESSION['user_id']) ? 'El meu compte' : 'Login'; ?></span>
-            </a>
+            </div>
             <ul id="desplegable-usuari" class="desplegable-usuari">
                 <?php if (isset($_SESSION['user_id'])): ?>
                     <li><a href="index.php?accio=el-meu-compte">El meu compte</a></li>

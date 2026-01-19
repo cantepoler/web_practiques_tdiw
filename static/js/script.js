@@ -47,33 +47,3 @@ async function afegirAlCarret(event, form) {
         alert('Error en afegir el producte al carret');
     }
 }
-
-async function confirmarCompra() {
-    if (!confirm('Estàs segur que vols confirmar aquesta comanda?')) {
-        return;
-    }
-
-    try {
-        const resposta = await fetch('index.php?accio=processar-comanda', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/x-www-form-urlencoded',
-            }
-        });
-
-        const data = await resposta.json();
-
-        if (data.success) {
-            // Update cart count to 0
-            document.getElementById('cart-count').textContent = '(0)';
-            // Redirect to confirmation page
-            window.location.href = `index.php?accio=confirmacio&id=${data.comanda_id}`;
-        } else {
-            alert('Error: ' + (data.error || 'No s\'ha pogut processar la comanda'));
-        }
-    } catch (error) {
-        console.error('Error:', error);
-        alert('Error en processar la comanda');
-    }
-}
-

@@ -55,9 +55,38 @@
 </section>
 
 <script>
-function confirmarCompra() {
-    if (confirm('Estàs segur que vols confirmar aquesta comanda?')) {
-        window.location.href = '<?php echo BASE_URL; ?>/index.php?accio=processar-comanda';
+async function confirmarCompra() {    
+    // Disable button to prevent double submission
+    const boto = document.querySelector('.checkout-accions .boto-accio');
+
+    try {
+        const resposta = await fetch('index.php?accio=processar-comanda', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+            }
+        });
+
+        const data = await resposta.json();
+
+        if (data.success) {
+            document.getElementById('cart-count').textContent = '(0)';
+            window.location.href = `index.php?accio=confirmacio&id=${data.comanda_id}`;
+        } else {
+            // Re-enable button on error
+            if (boto) {
+                boto.disabled = false;
+                boto.textContent = 'Confirmar compra';
+            }
+            console.error('Error:', error);
+        }
+    } catch (error) {
+        // Re-enable button on error
+        if (boto) {
+            boto.disabled = false;
+            boto.textContent = 'Confirmar compra';
+        }
+        console.error('Error:', error);
     }
 }
 </script>

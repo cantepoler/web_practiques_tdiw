@@ -133,20 +133,51 @@ header {
     display: inline-block;
 }
 
+.login-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: background-color 0.2s;
+}
+
+.login-header:hover {
+    background-color: #f3f4f6;
+    cursor: pointer;
+}
+
 .desplegable-usuari {
     display: none;
     position: absolute;
     right: 0;
+    top: 100%;
     background-color: white;
     border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
     list-style: none;
     padding: 10px;
-    width: 150px;
+    width: 180px;
     z-index: 1000;
+    margin-top: 10px;
 }
 
 .desplegable-usuari li {
-    padding: 5px 0;
+    padding: 8px 0;
+}
+
+.desplegable-usuari li a {
+    display: block;
+    text-decoration: none;
+    color: #1f2937;
+    transition: color 0.2s;
+}
+
+.desplegable-usuari li a:hover {
+    color: #3a86ff;
 }
 
 
