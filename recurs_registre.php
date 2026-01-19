@@ -15,6 +15,5 @@
         include_once __DIR__.'/controladors/header.php';
         include __DIR__.'/controladors/registre.php';
         ?>
-
     </body>
 </html>

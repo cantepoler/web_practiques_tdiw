@@ -44,7 +44,7 @@
             
             <div class="carret-accions">
                 <a href="index.php?accio=llistar-categories" class="boto-secundari">Continuar comprant</a>
-                <a href="index.php?accio=checkout" class="boto-accio">Proceed with payment</a>
+                <a href="index.php?accio=checkout" class="boto-accio">Finalitzar compra</a>
             </div>
         </div>
     <?php endif; ?>

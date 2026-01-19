@@ -126,8 +126,6 @@ header {
     mix-blend-mode: multiply; 
 }
 
-
-
 .login {
     position: relative;
     display: inline-block;
@@ -694,9 +692,16 @@ header {
     gap: 20px;
 }
 
-.carret-accions .boto-accio {
-    flex: 1;
-    max-width: 300px;
+.boto-accio {
+    border: none;
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #3a86ff;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: background 0.2s ease;
 }
 
 @media (max-width: 768px) {

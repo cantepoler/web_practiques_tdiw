@@ -1,22 +1,22 @@
 <section class="contenidor-form">
     <h2>Iniciar Sessió</h2>
-    
+
     <?php if (isset($error)): ?>
         <div class="error-message"><?php echo $error; ?></div>
     <?php endif; ?>
     
     <form id="login-form">
         <label for="email">Correu electrònic:</label>
-        <input type="email" name="email" id="email" required>
+        <input type="email" name="email" id="email" placeholder="exemple@correu.com" required>
         
         <label for="password">Contrasenya:</label>
-        <input type="password" name="password" id="password" required>
+        <input type="password" name="password" id="password" placeholder="Introdueix la teva contrasenya" required>
         
         <button type="submit" class="boto-accio">Iniciar sessió</button>
     </form>
     
-    <p class="enllaç-registre">
-        No tens compte? <a href="index.php?accio=registre">Registrar-se</a>
+    <p style="text-align: center; margin-top: 20px; font-size: 14px;">
+        No tens compte? <a href="index.php?accio=registre" style="color: #3a86ff; font-weight: 600;">Registrar-se</a>
     </p>
 </section>
 
@@ -46,26 +46,4 @@ document.getElementById('login-form').addEventListener('submit', async function(
     }
 });
 </script>
-
-<style>
-.error-message {
-    background: #fee2e2;
-    color: #991b1b;
-    padding: 12px;
-    border-radius: 8px;
-    margin-bottom: 20px;
-    text-align: center;
-    display: none;
-}
-
-.enllaç-registre {
-    text-align: center;
-    margin-top: 20px;
-}
-
-.enllaç-registre a {
-    color: #3a86ff;
-    font-weight: 600;
-}
-</style>
 
