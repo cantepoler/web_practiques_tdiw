@@ -47,11 +47,14 @@ function obtenirUsuariPerId($conn, $usuari_id) {
     return null;
 }
 
-function actualizarUsuari($conn, $usuari_id, $nom, $adreca, $poblacio, $codi_postal) {
-    $sql = "UPDATE usuaris
-              SET nom = $1, adreca = $2, poblacio = $3, codi_postal = $4
-              WHERE id = $5";
-    $result = pg_query_params($conn, $sql, [$nom, $adreca, $poblacio, $codi_postal, $usuari_id]);
+function actualizarUsuari($conn, $usuari_id, $nom, $adreca, $poblacio, $codi_postal, $imatge_perfil = null) {
+    if ($imatge_perfil !== null) {
+        $sql = "UPDATE usuaris SET nom = $1, adreca = $2, poblacio = $3, codi_postal = $4, imatge_perfil = $5 WHERE id = $6";
+        $result = pg_query_params($conn, $sql, [$nom, $adreca, $poblacio, $codi_postal, $imatge_perfil, $usuari_id]);
+    } else {
+        $sql = "UPDATE usuaris SET nom = $1, adreca = $2, poblacio = $3, codi_postal = $4 WHERE id = $5";
+        $result = pg_query_params($conn, $sql, [$nom, $adreca, $poblacio, $codi_postal, $usuari_id]);
+    }
     
     return $result;
 }

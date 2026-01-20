@@ -1,7 +1,10 @@
 <?php
 session_start();
 
-define("BASE_URL", "https://tdiw-g5.deic-docencia.uab.cat");
+define("BASE_URL", $_ENV['BASE_URL'] ?? "https://tdiw-g5.deic-docencia.uab.cat");
+
+define("FILES_ABSOLUTE_PATH", __DIR__ . '/uploadedFiles/');
+define("FILES_PUBLIC_PATH", BASE_URL . '/uploadedFiles/');
 
 // El recurs al que accedirem ens ho dirà la variable accio.
 $accio = $_GET['accio'] ?? NULL;
@@ -40,7 +43,10 @@ switch ($accio) {
     case 'eliminar-del-carret':
         include __DIR__."/recurs_eliminar_del_carret.php";
         break;
-case 'checkout':
+    case 'buidar-carret':
+        include __DIR__."/recurs_buidar_carret.php";
+        break;
+    case 'checkout':
         include __DIR__."/recurs_checkout.php";
         break;
     case 'processar-comanda':

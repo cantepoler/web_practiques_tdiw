@@ -44,6 +44,7 @@
             
             <div class="carret-accions">
                 <a href="index.php?accio=llistar-categories" class="boto-secundari">Continuar comprant</a>
+                <button class="boto-secundari" onclick="buidarCarret()">Buidar carret</button>
                 <a href="index.php?accio=checkout" class="boto-accio">Finalitzar compra</a>
             </div>
         </div>
@@ -132,6 +133,47 @@ async function eliminarDelCarret(idProducte) {
     } catch (error) {
         console.error('Error:', error);
         alert('Error en eliminar el producte');
+    }
+}
+
+async function buidarCarret() {
+    if (!confirm('Estàs segur que vols buidar tot el carret? Aquesta acció no es pot desfer.')) {
+        return;
+    }
+
+    try {
+        const resposta = await fetch('index.php?accio=buidar-carret', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+            }
+        });
+
+        const data = await resposta.json();
+
+        if (data.success) {
+            // Remove all cart items
+            const items = document.querySelectorAll('.carret-item');
+            items.forEach(item => item.remove());
+
+            // Hide cart items container
+            document.querySelector('.carret-items').style.display = 'none';
+
+            // Show empty cart message
+            document.querySelector('.carret-buit').style.display = 'block';
+
+            // Update total price to 0
+            document.querySelector('.total-preu').textContent = number_format(0, 2, ',', '.') + ' €';
+
+            // Update cart count in header to 0
+            document.getElementById('cart-count').textContent = '(0)';
+
+            // Scroll to top of page
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    } catch (error) {
+        console.error('Error:', error);
+        alert('Error en buidar el carret');
     }
 }
 
