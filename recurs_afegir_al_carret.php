@@ -1,0 +1,1 @@
+<?php include __DIR__.'/controladors/afegir_al_carret.php'; ?>

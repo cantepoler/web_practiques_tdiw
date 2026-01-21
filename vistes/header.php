@@ -1,3 +1,6 @@
+<?php
+@session_start();
+?>
 <header>
     <div>
         <a href="/" class="static">
@@ -8,17 +11,17 @@
 
     <div class="interactive">
         <div class="cart">
-            <a href="#"> <!-- TODO -->
+            <a href="index.php?accio=carret">
                 <img src="/img/carro.png" alt="Carro de la compra" width="20px">
                 <span>Carret</span>
-            </a> 
-                
+                <span id="cart-count">(<?php echo isset($_SESSION['carret']) ? array_sum($_SESSION['carret']) : 0; ?>)</span>
+            </a>
         </div>
         <div class="login" id="obrir_menu">
-            <a href="#">
+            <div class="login-header">
                 <img src="/img/person.svg" alt="Icona d'usuari" width="20px">
-                <span>Login</span>
-            </a>
+                <span><?php echo isset($_SESSION['user_id']) ? 'El meu compte' : 'Login'; ?></span>
+            </div>
             <ul id="desplegable-usuari" class="desplegable-usuari">
                 <?php if (isset($_SESSION['user_id'])): ?>
                     <li><a href="index.php?accio=el-meu-compte">El meu compte</a></li>
